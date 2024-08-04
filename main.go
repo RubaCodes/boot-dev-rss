@@ -29,8 +29,8 @@ func main() {
 	}))
 	// create a sub path router
 	v1Router := chi.NewRouter()
-	v1Router.Get("/healthz", handlerReadiness) //health check
-	v1Router.Get("/err", handlerErr)           //health check
+	v1Router.Get("/healtz", handlerReadiness) //health check
+	v1Router.Get("/err", handlerErr)          //err check
 	// mount routes paths..
 	router.Mount("/v1", v1Router)
 	//create new server
