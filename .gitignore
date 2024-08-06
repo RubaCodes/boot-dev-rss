@@ -1,3 +1,4 @@
 boot-dev-rss
 .env
 go-rss
+.vscode
