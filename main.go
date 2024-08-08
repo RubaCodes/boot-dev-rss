@@ -55,8 +55,9 @@ func main() {
 	v1Router.Get("/healtz", handlerReadiness) //health check
 	v1Router.Get("/err", handlerErr)          //err check
 	//Users
-	v1Router.Get("/users", apiCfg.middlewareAuth(apiCfg.handlerGetUser)) //get user with auth
-	v1Router.Post("/users", apiCfg.handlerCreateUser)                    //create user
+	v1Router.Get("/users", apiCfg.middlewareAuth(apiCfg.handlerGetUser))               //get user with auth
+	v1Router.Post("/users", apiCfg.handlerCreateUser)                                  //create user
+	v1Router.Get("/users/posts", apiCfg.middlewareAuth(apiCfg.handlerGetPostsForUser)) //get user with auth
 	//Feeds
 	v1Router.Get("/feeds", apiCfg.handlerGetFeeds)                           // create feed
 	v1Router.Post("/feeds", apiCfg.middlewareAuth(apiCfg.handlerCreateFeed)) // create feed
